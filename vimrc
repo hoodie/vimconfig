@@ -35,17 +35,78 @@
 
 " LOOKS }}}
   
+" GUI AND TERMINAL {{{
+  if &term=~'linux' " here we only have a nongraphic terminal
+    "colorscheme default
 
+  else " this should at least be a $TERM=='xterm', but only 256 colors
+    if has("gui_running") " pick your any color you like as well as fonts
+      " GUI SETTINGS {{{
+      "" Menu
+      " 'a' autoselect ( for copy and pasting )
+      " 'c'	Use console dialogs instead of popup dialogs for simple choices.
+      " 'm'	Menu bar is present.
+      " 't'	Include tearoff menu items.  Currently only works for Win32, GTK+, and Motif 1.2 GUI.
+      set guioptions=Tace " ace, mace, Tace, Tacet
+      set mousehide " hide pointer during typing
+      " GUI SETTINGS }}}
+
+      "BRIGHT Colors:  summerfruit256, martin_krischik
+      "DARK Colors:    Monokai, jellybeans, lucius, molokai_original, mustang, eddie
+      "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
+
+      set guifont=Source\ Code\ Pro\ 9
+      colorscheme default
+
+
+    else " you have an xterm, only 256 colors
+      colorscheme default
+      set t_Co=256
+      set mouse=a
+
+    endif
+  endif
+" GUI AND TERMINAL }}}
+
+" TAGLIST {{{
+  let Tlist_Compact_Format = 0
+  let Tlist_Display_Tag_Scope = 1
+  let Tlist_Show_One_File = 1
+  let Tlist_Auto_Update = 1
+  let Tlist_GainFocus_On_ToggleOpen = 1
+  let Tist_Close_On_Select = 0
+  let Tlist_WinWidth = 40
+" TAGLIST }}}
 
 " SETTINGS }}}
 
 " SHORTCUTS {{{
+  let mapleader=','
+
+	nnoremap <silent> <F9> :TlistToggle<CR>
+	nnoremap <silent> <S-F9> :TlistUpdate<CR>
+  map <F3> :nohl<CR>
+  map <F11> :set fullscreen!<CR>
+  map <F12> :NERDTreeToggle<CR>
+  noremap <silent><Leader>/ :nohls<CR>
+
+  map <F4> :call Switch_h_cpp()<CR>
+  map <F8> :make -j4 <CR>
 " SHORTCUTS }}}
 
 " COLORS {{{
 " COLORS }}}
 
 " FILETYPES {{{
+  filetype indent plugin on
+" FOLDING {{{
+  au Filetype cpp    setl foldmethod=marker foldmarker={,} nofoldenable
+  au Filetype ruby   setl foldmethod=indent foldenable
+  au Filetype python setl foldmethod=indent foldenable
+  au Filetype yaml   setl foldmethod=indent foldenable
+
+  "au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
+" FOLDING }}}
 " FILETYPES }}}
 
 " Extensions {{{

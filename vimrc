@@ -90,23 +90,28 @@
   map <F12> :NERDTreeToggle<CR>
   noremap <silent><Leader>/ :nohls<CR>
 
-  map <F4> :call Switch_h_cpp()<CR>
-  map <F8> :make -j4 <CR>
-" SHORTCUTS }}}
+  if exists(":Tabularize")
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
+    nmap <Leader>a| :Tabularize /|<CR>
+    vmap <Leader>a| :Tabularize /|<CR>
+  endif
 
-" COLORS {{{
-" COLORS }}}
+" SHORTCUTS }}}
 
 " FILETYPES {{{
   filetype indent plugin on
-" FOLDING {{{
   au Filetype cpp    setl foldmethod=marker foldmarker={,} nofoldenable
+  au Filetype cpp map <F4> :call Switch_h_cpp()<CR>
+  au Filetype cpp map <F8> :make -j4 <CR>
+
   au Filetype ruby   setl foldmethod=indent foldenable
   au Filetype python setl foldmethod=indent foldenable
   au Filetype yaml   setl foldmethod=indent foldenable
 
   "au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
-" FOLDING }}}
 " FILETYPES }}}
 
 " Extensions {{{

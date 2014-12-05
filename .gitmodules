@@ -25,3 +25,6 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "bundle/sensible"]
+	path = bundle/sensible
+	url = https://github.com/tpope/vim-sensible

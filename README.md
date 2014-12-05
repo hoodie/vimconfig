@@ -3,13 +3,14 @@
 ## installed: plugins
 
   1. pathogen  (https://github.com/tpope/vim-pathogen)
-  2. fugitiv   (https://github.com/tpope/vim-fugitive)
-  3. surround  (https://github.com/tpope/vim-surround)
-  4. abolish   (https://github.com/tpope/vim-abolish)
-  5. nerdtree  (https://github.com/scrooloose/nerdtree)
-  6. tabular   (https://github.com/godlygeek/tabular)
-  7. pandoc    (https://github.com/vim-pandoc/vim-pandoc, https://github.com/vim-pandoc/vim-pandoc-syntax)
-  8. gitgutter (https://github.com/airblade/vim-gitgutter)
+  2. sensible  (https://github.com/tpope/vim-sensible)
+  3. fugitive  (https://github.com/tpope/vim-fugitive)
+  4. surround  (https://github.com/tpope/vim-surround)
+  5. abolish   (https://github.com/tpope/vim-abolish)
+  6. nerdtree  (https://github.com/scrooloose/nerdtree)
+  7. tabular   (https://github.com/godlygeek/tabular)
+  8. pandoc    (https://github.com/vim-pandoc/vim-pandoc, https://github.com/vim-pandoc/vim-pandoc-syntax)
+  9. gitgutter (https://github.com/airblade/vim-gitgutter)
  
 ## not yet installed plugins
 

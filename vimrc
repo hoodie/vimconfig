@@ -56,11 +56,11 @@
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
       set guifont=Source\ Code\ Pro\ 9
-      colorscheme default
+      colorscheme wombat
 
 
     else " you have an xterm, only 256 colors
-      colorscheme default
+      colorscheme wombat256
       set t_Co=256
       set mouse=a
 
@@ -83,37 +83,96 @@
 " SHORTCUTS {{{
   let mapleader=','
 
-	nnoremap <silent> <F9> :TlistToggle<CR>
-	nnoremap <silent> <S-F9> :TlistUpdate<CR>
   map <F3> :nohl<CR>
+
+	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
+	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
+
+  map <F10> :NERDTreeToggle<CR>
   map <F11> :set fullscreen!<CR>
-  map <F12> :NERDTreeToggle<CR>
   noremap <silent><Leader>/ :nohls<CR>
 
+" Tabularize {{{
   if exists(":Tabularize")
     nmap <Leader>a= :Tabularize /=<CR>
     vmap <Leader>a= :Tabularize /=<CR>
     nmap <Leader>a: :Tabularize /:\zs<CR>
     vmap <Leader>a: :Tabularize /:\zs<CR>
-    nmap <Leader>a| :Tabularize /|<CR>
-    vmap <Leader>a| :Tabularize /|<CR>
   endif
+" Tabularize }}}
 
 " SHORTCUTS }}}
 
 " FILETYPES {{{
   filetype indent plugin on
-  au Filetype cpp    setl foldmethod=marker foldmarker={,} nofoldenable
+" cpp {{{
+  au Filetype cpp setl foldmethod=marker foldmarker={,} nofoldenable
   au Filetype cpp map <F4> :call Switch_h_cpp()<CR>
   au Filetype cpp map <F8> :make -j4 <CR>
+" cpp }}}
 
   au Filetype ruby   setl foldmethod=indent foldenable
   au Filetype python setl foldmethod=indent foldenable
+  au Filetype python setl shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   au Filetype yaml   setl foldmethod=indent foldenable
+  au Filetype pandoc setl nofoldenable
+  au Filetype pandoc nmap <silent><buffer> <F9> :TOC<CR>
+
+  "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
+  "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
+  "au BufRead,BufNewFile *.js,*.java   set shiftwidth=2 tabstop=4 smarttab expandtab softtabstop=4
+  "au BufRead,BufNewFile *.coffee      set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2 listchars=tab:>.,trail:.,extends:#,nbsp:.
 
   "au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
 " FILETYPES }}}
 
 " Extensions {{{
-" test
+
+" easier search {{{
+  nnoremap / /\v
+  vnoremap / /\v "normale rexen
+  set hlsearch
+  set ignorecase
+  set smartcase
+  set incsearch
+" easier search }}}
+
+
+" gitgutter {{{
+  let g:gitgutter_max_signs = 500  " default value
+  "let g:gitgutter_enabled = 0
+" gitgutter }}}
+
+" pandoc {{{
+  let g:pandoc#toc#position='left'
+" pandoc }}}
+
+" window stuff {{{
+  map <C-h> <C-w>h
+  map <C-j> <C-w>j
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
+  "map <C-S-h> <C-w>< " does not use shift yet, because vim does not
+  "map <C-S-j> <C-w>+ " lets hope it will at some point
+  "map <C-S-k> <C-w>- "
+  "map <C-S-l> <C-w>> "
+  "" }}}
+
+  " Spell checking   {{{
+  "if version >= 700
+  "  hi clear SpellBad
+  "  hi clear SpellCap
+  "  hi clear SpellRare
+  "  hi clear SpellLocal
+  "  hi SpellBad    ctermfg=9
+  "  hi SpellCap    ctermfg=3    cterm=underline
+  "  hi SpellRare   ctermfg=13   cterm=underline
+  "  hi SpellLocal  cterm=None
+  "endif 
+  "}}}
+
+  " latex {{{
+    let g:tex_flavor='latex'
+  " latex }}}
+ 
 " Extensions }}}

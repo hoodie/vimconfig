@@ -14,8 +14,6 @@
  
 ## not yet installed plugins
 
-*	[ ] https://github.com/Lokaltog/vim-distinguished
-*	[ ] https://github.com/chriskempson/vim-tomorrow-theme
 *	[ ] https://github.com/altercation/vim-colors-solarized
 *	[ ] https://github.com/kien/ctrlp.vim
 *	[ ] https://github.com/mattsacks/vim-symbols
@@ -28,7 +26,8 @@
 *	[ ] https://github.com/thinca/vim-guicolorscheme
 *	[ ] https://github.com/vim-scripts/ScrollColors
 *	[ ] https://github.com/vim-scripts/gnupg.vim
-*  [ ] https://github.com/KohPoll/vim-less
+* [ ] https://github.com/KohPoll/vim-less
+* [ ] https://github.com/Lokaltog/powerline
 
 ## Further reading
 

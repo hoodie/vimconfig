@@ -73,7 +73,7 @@
   let Tlist_Display_Tag_Scope = 1
   let Tlist_Show_One_File = 1
   let Tlist_Auto_Update = 1
-  let Tlist_GainFocus_On_ToggleOpen = 1
+  let Tlist_GainFocus_On_ToggleOpen = 0
   let Tist_Close_On_Select = 0
   let Tlist_WinWidth = 40
 " TAGLIST }}}
@@ -145,7 +145,6 @@
   set smartcase
   set incsearch
 " easier search }}}
-
 
 " gitgutter {{{
   let g:gitgutter_max_signs = 500  " default value

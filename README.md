@@ -25,7 +25,6 @@
 *	[ ] https://github.com/thinca/vim-guicolorscheme
 *	[ ] https://github.com/vim-scripts/ScrollColors
 * [ ] https://github.com/KohPoll/vim-less
-* [ ] https://github.com/Lokaltog/powerline
 
 ## Further reading
 

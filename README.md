@@ -29,3 +29,13 @@
 *	[ ] https://github.com/vim-scripts/ScrollColors
 *	[ ] https://github.com/vim-scripts/gnupg.vim
 *  [ ] https://github.com/KohPoll/vim-less
+
+## Further reading
+
+* http://nvie.com/posts/how-i-boosted-my-vim/
+* http://lyuts.net/blog/2010/01/vim-ide
+* http://blog.sanctum.geek.nz/category/vim/
+* http://code.google.com/p/vimcolorschemetest/
+* http://vi-improved.org/vimrc.html
+* http://blog.copyninja.info/2010/02/cc-auto-complete-for-vim.html
+* http://choorucode.com/2010/11/26/how-to-view-variables-in-vim/

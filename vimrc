@@ -128,6 +128,14 @@
 
 " Extensions {{{
 
+" navigation {{{
+  inoremap jj <ESC>
+  inoremap kk <ESC>
+  set wildmenu
+  nnoremap k gk
+  nnoremap j gj
+  " navigation }}}
+
 " easier search {{{
   nnoremap / /\v
   vnoremap / /\v "normale rexen

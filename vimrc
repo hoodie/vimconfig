@@ -1,5 +1,4 @@
 " Pathogen {{{
-
   " using ~/.vim/bundle/pathogen/autoload/pathogen.vim
   runtime ./bundle/pathogen/autoload/pathogen.vim
   execute pathogen#infect()
@@ -21,6 +20,7 @@
 " LOOKS {{{
   syntax on " of cause!
 
+  set number
   set ruler           " current line number on status bar
   set nowrap          " no line wrapping
   set cursorline      " highlight current line
@@ -117,6 +117,7 @@
   au Filetype yaml   setl foldmethod=indent foldenable
   au Filetype pandoc setl nofoldenable
   au Filetype pandoc nmap <silent><buffer> <F9> :TOC<CR>
+  au Filetype vim    setl foldmethod=marker foldenable
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.

@@ -172,6 +172,7 @@
   "map <C-S-j> <C-w>+ " lets hope it will at some point
   "map <C-S-k> <C-w>- "
   "map <C-S-l> <C-w>> "
+  let g:airline_powerline_fonts = 1
   "" }}}
 
   " Spell checking   {{{

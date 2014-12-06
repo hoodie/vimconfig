@@ -17,8 +17,13 @@
   set hidden           " hides buffers instead of closing them
   set visualbell       " don't beep
   set noerrorbells     " don't beep
+  set splitbelow       " open split below instead above
+  set splitright       " open split right instead leeft
   set pastetoggle=<F2> " disables autoindenting etc for pasting
 
+  set backup
+  set backupdir=~/.vim/backup
+  set directory=~/.vim/swap
 
 " BEHAVIOUR }}}
 

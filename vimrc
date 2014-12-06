@@ -14,6 +14,11 @@
   set sidescrolloff=5  " keep at least 5 lines left/right of cursor
   set mouse=a          " use mouse everywhere
   set autochdir        " always switch to the current file directory
+  set hidden           " hides buffers instead of closing them
+  set visualbell       " don't beep
+  set noerrorbells     " don't beep
+  set pastetoggle=<F2> " disables autoindenting etc for pasting
+
 
 " BEHAVIOUR }}}
 
@@ -82,8 +87,6 @@
 
 " SHORTCUTS {{{
   let mapleader=','
-
-  map <F3> :nohl<CR>
 
 	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
 	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
@@ -182,5 +185,9 @@
   " latex {{{
     let g:tex_flavor='latex'
   " latex }}}
+
+  " sudo {{{
+  cmap w!! w !sudo tee % >/dev/null 
+  " sudo }}}
  
 " Extensions }}}

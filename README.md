@@ -22,7 +22,6 @@
 *	[ ] https://github.com/robbyrussell/oh-my-zsh
 *	[ ] https://github.com/sjl/gundo.vim
 *	[ ] https://github.com/terryma/vim-multiple-cursors
-*	[ ] https://github.com/thinca/vim-guicolorscheme
 *	[ ] https://github.com/vim-scripts/ScrollColors
 * [ ] https://github.com/KohPoll/vim-less
 

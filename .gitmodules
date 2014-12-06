@@ -37,3 +37,6 @@
 [submodule "bundle/guicolorscheme"]
 	path = bundle/guicolorscheme
 	url = https://github.com/thinca/vim-guicolorscheme
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts

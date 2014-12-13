@@ -14,11 +14,11 @@
   set sidescrolloff=5  " keep at least 5 lines left/right of cursor
   set mouse=a          " use mouse everywhere
   set autochdir        " always switch to the current file directory
-  set hidden           " hides buffers instead of closing them
-  set visualbell       " don't beep
+  "set hidden           " hides buffers instead of closing them
+  set novisualbell     " don't beep
   set noerrorbells     " don't beep
   set splitbelow       " open split below instead above
-  set splitright       " open split right instead leeft
+  "set splitright       " open split right instead leeft
   set pastetoggle=<F2> " disables autoindenting etc for pasting
 
   set backup
@@ -83,7 +83,7 @@
   let Tlist_Display_Tag_Scope = 1
   let Tlist_Show_One_File = 1
   let Tlist_Auto_Update = 1
-  let Tlist_GainFocus_On_ToggleOpen = 0
+  let Tlist_GainFocus_On_ToggleOpen = 1
   let Tist_Close_On_Select = 0
   let Tlist_WinWidth = 40
 " TAGLIST }}}

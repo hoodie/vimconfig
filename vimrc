@@ -93,6 +93,8 @@
 " SHORTCUTS {{{
   let mapleader=','
 
+  nmap <F8> :TagbarToggle<CR>
+
 	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
 	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
 
@@ -125,7 +127,7 @@
   au Filetype yaml   setl foldmethod=indent foldenable
   au Filetype pandoc setl nofoldenable
   au Filetype pandoc nmap <silent><buffer> <F9> :TOC<CR>
-  au Filetype vim    setl foldmethod=marker foldenable
+  au Filetype vim    setl foldmethod=marker foldenable shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.

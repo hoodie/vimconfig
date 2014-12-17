@@ -1,0 +1,12 @@
+" pandoc {{{
+  let g:pandoc#toc#position='left'
+  au Filetype pandoc setl nofoldenable
+  au Filetype pandoc nmap <silent><buffer> <F9> :TOC<CR>
+" pandoc }}}
+
+
+colorscheme Tomorrow-Night
+"let g:airline_theme="badwolf"
+set guifont="Source Code Pro 11"
+set nonumber
+set foldcolumn=0

@@ -125,8 +125,6 @@
   au Filetype python setl foldmethod=indent foldenable
   au Filetype python setl shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   au Filetype yaml   setl foldmethod=indent foldenable
-  au Filetype pandoc setl nofoldenable
-  au Filetype pandoc nmap <silent><buffer> <F9> :TOC<CR>
   au Filetype vim    setl foldmethod=marker foldenable shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
@@ -158,12 +156,12 @@
 
 " gitgutter {{{
   let g:gitgutter_max_signs = 500  " default value
+  let g:gitgutter_realtime=0
+  let g:gitgutter_eager=0
+  let g:gitgutter_diff_args='-w'
+  let g:gitgutter_highlight_lines=0
   "let g:gitgutter_enabled = 0
 " gitgutter }}}
-
-" pandoc {{{
-  let g:pandoc#toc#position='left'
-" pandoc }}}
 
 " window stuff {{{
   map <C-h> <C-w>h

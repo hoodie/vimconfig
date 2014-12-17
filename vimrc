@@ -88,6 +88,10 @@
   let Tlist_WinWidth = 40
 " TAGLIST }}}
 
+" TAGBAR {{{
+  let g:tagbar_left=1
+" TAGBAR }}}
+
 " SETTINGS }}}
 
 " SHORTCUTS {{{

@@ -65,7 +65,8 @@
       "DARK Colors:    Monokai, jellybeans, lucius, molokai_original, mustang, eddie
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
-      set guifont=Source\ Code\ Pro\ 9
+      "set guifont=Source\ Code\ Pro\ 9
+      set guifont=Meslo\ LG\ M\ DZ\ 9
       colorscheme wombat
 
 

@@ -24,6 +24,9 @@
 *	[ ] https://github.com/terryma/vim-multiple-cursors
 *	[ ] https://github.com/vim-scripts/ScrollColors
 * [ ] https://github.com/KohPoll/vim-less
+* [ ] YouCompleteMe
+* [ ] tern_for_vim
+* [ ] ultisnips
 
 ## Further reading
 

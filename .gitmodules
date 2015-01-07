@@ -1,48 +1,48 @@
 [submodule "bundle/pathogen"]
-	path = bundle/pathogen
+	path = bundles_available/pathogen
 	url = https://github.com/tpope/vim-pathogen
 [submodule "bundle/fugitive"]
-	path = bundle/fugitive
+	path = bundles_available/fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "bundle/abolish"]
-	path = bundle/abolish
+	path = bundles_available/abolish
 	url = https://github.com/tpope/vim-abolish
 [submodule "bundle/surround"]
-	path = bundle/surround
+	path = bundles_available/surround
 	url = https://github.com/tpope/vim-surround
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+	path = bundles_available/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "bundle/tabular"]
-	path = bundle/tabular
+	path = bundles_available/tabular
 	url = https://github.com/godlygeek/tabular
 [submodule "bundle/pandoc"]
-	path = bundle/pandoc
+	path = bundles_available/pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc
 [submodule "bundle/pandoc-syntax"]
-	path = bundle/pandoc-syntax
+	path = bundles_available/pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
 [submodule "bundle/gitgutter"]
-	path = bundle/gitgutter
+	path = bundles_available/gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 [submodule "bundle/sensible"]
-	path = bundle/sensible
+	path = bundles_available/sensible
 	url = https://github.com/tpope/vim-sensible
 [submodule "bundle/gnupg"]
-	path = bundle/gnupg
+	path = bundles_available/gnupg
 	url = https://github.com/vim-scripts/gnupg.vim
 [submodule "bundle/airline"]
-	path = bundle/airline
+	path = bundles_available/airline
 	url = https://github.com/bling/vim-airline
 [submodule "bundle/guicolorscheme"]
-	path = bundle/guicolorscheme
+	path = bundles_available/guicolorscheme
 	url = https://github.com/thinca/vim-guicolorscheme
 [submodule "powerline-fonts"]
 	path = powerline-fonts
 	url = https://github.com/Lokaltog/powerline-fonts
 [submodule "bundle/tagbar"]
-	path = bundle/tagbar
+	path = bundles_available/tagbar
 	url = https://github.com/majutsushi/tagbar
 [submodule "bundle/csv"]
-	path = bundle/csv
+	path = bundles_available/csv
 	url = https://github.com/chrisbra/csv.vim

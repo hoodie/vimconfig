@@ -9,8 +9,9 @@
   5. abolish   (https://github.com/tpope/vim-abolish)
   6. nerdtree  (https://github.com/scrooloose/nerdtree)
   7. tabular   (https://github.com/godlygeek/tabular)
-  8. pandoc    (https://github.com/vim-pandoc/vim-pandoc, https://github.com/vim-pandoc/vim-pandoc-syntax)
+  8. pandoc    (https://github.com/vm-pandoc/vim-pandoc, https://github.com/vim-pandoc/vim-pandoc-syntax)
   9. gitgutter (https://github.com/airblade/vim-gitgutter)
+ 10. exchange  (https://github.com/tommcdo/vim-exchange)
  
 ## not yet installed plugins
 

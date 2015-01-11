@@ -46,3 +46,6 @@
 [submodule "bundle/csv"]
 	path = bundles_available/csv
 	url = https://github.com/chrisbra/csv.vim
+[submodule "bundles_available/exchange"]
+	path = bundles_available/exchange
+	url = https://github.com/tommcdo/vim-exchange

@@ -21,6 +21,7 @@
   "set splitright       " open split right instead leeft
   set pastetoggle=<F2> " disables autoindenting etc for pasting
 
+  set ttyfast
   set backup
   set backupdir=~/.vim/backup
   set directory=~/.vim/swap

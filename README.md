@@ -27,6 +27,7 @@
 * [ ] YouCompleteMe
 * [ ] tern_for_vim
 * [ ] ultisnips
+* [ ] a.vim
 
 ## Further reading
 

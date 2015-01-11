@@ -99,6 +99,7 @@
 " SHORTCUTS {{{
   let mapleader=','
 
+  nnoremap <F5> :GundoToggle<CR>
   nmap <F8> :TagbarToggle<CR>
 
 	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>

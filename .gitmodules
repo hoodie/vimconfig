@@ -49,3 +49,6 @@
 [submodule "bundles_available/exchange"]
 	path = bundles_available/exchange
 	url = https://github.com/tommcdo/vim-exchange
+[submodule "bundles_available/gundo"]
+	path = bundles_available/gundo
+	url = http://github.com/sjl/gundo.vim

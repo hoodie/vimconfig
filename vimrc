@@ -22,9 +22,10 @@
   set pastetoggle=<F2> " disables autoindenting etc for pasting
 
   set ttyfast
-  set backup
-  set backupdir=~/.vim/backup
-  set directory=~/.vim/swap
+  "set backup
+  "set backupdir=~/.vim/backup
+  "set directory=~/.vim/swap
+  "set noswapfile
 
 " BEHAVIOUR }}}
 
@@ -58,7 +59,7 @@
       " 'c'	Use console dialogs instead of popup dialogs for simple choices.
       " 'm'	Menu bar is present.
       " 't'	Include tearoff menu items.  Currently only works for Win32, GTK+, and Motif 1.2 GUI.
-      set guioptions=Tace " ace, mace, Tace, Tacet
+      set guioptions=Tacerb " ace, mace, Tace, Tacet
       set mousehide " hide pointer during typing
       " GUI SETTINGS }}}
 
@@ -66,8 +67,9 @@
       "DARK Colors:    Monokai, jellybeans, lucius, molokai_original, mustang, eddie
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
+      set guifont=Fira\ Mono\ 9
       "set guifont=Source\ Code\ Pro\ 9
-      set guifont=Meslo\ LG\ M\ DZ\ 9
+      "set guifont=Meslo\ LG\ M\ DZ\ 9
       colorscheme wombat
 
 
@@ -92,6 +94,7 @@
 
 " TAGBAR {{{
   let g:tagbar_left=1
+  let g:tagbar_sort=0
 " TAGBAR }}}
 
 " SETTINGS }}}
@@ -100,10 +103,14 @@
   let mapleader=','
 
   nnoremap <F5> :GundoToggle<CR>
-  nmap <F8> :TagbarToggle<CR>
 
-	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
-	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
+  "nmap <F8> :TagbarToggle<CR>
+  nmap <F8> :cwindow<CR>
+  nmap <S-F8> :make -j3<CR>
+	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
+	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
+	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TagbarToggle<CR>
+  au Filetype cpp,c nmap <S-F8> :make -j3<CR>
 
   map <F10> :NERDTreeToggle<CR>
   map <F11> :set fullscreen!<CR>

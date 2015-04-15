@@ -52,3 +52,6 @@
 [submodule "bundles_available/gundo"]
 	path = bundles_available/gundo
 	url = http://github.com/sjl/gundo.vim
+[submodule "bundles_available/rust"]
+	path = bundles_available/rust
+	url = https://github.com/rust-lang/rust.vim

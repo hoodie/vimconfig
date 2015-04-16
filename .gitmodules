@@ -55,3 +55,9 @@
 [submodule "bundles_available/rust"]
 	path = bundles_available/rust
 	url = https://github.com/rust-lang/rust.vim
+[submodule "bundles_available/toml"]
+	path = bundles_available/toml
+	url = https://github.com/cespare/vim-toml
+[submodule "bundles_available/coffee-script"]
+	path = bundles_available/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script

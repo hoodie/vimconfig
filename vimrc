@@ -70,7 +70,8 @@
       set guifont=Fira\ Mono\ 9
       "set guifont=Source\ Code\ Pro\ 9
       "set guifont=Meslo\ LG\ M\ DZ\ 9
-      colorscheme wombat
+      "colorscheme wombat
+      colorscheme lucius
 
 
     else " you have an xterm, only 256 colors
@@ -145,9 +146,9 @@
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   "au BufRead,BufNewFile *.js,*.java   set shiftwidth=2 tabstop=4 smarttab expandtab softtabstop=4
-  "au BufRead,BufNewFile *.coffee      set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2 listchars=tab:>.,trail:.,extends:#,nbsp:.
+  au BufRead,BufNewFile *.coffee      set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2 listchars=tab:>.,trail:.,extends:#,nbsp:.
+  au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
 
-  "au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
 " FILETYPES }}}
 
 " Extensions {{{
@@ -177,6 +178,12 @@
   let g:gitgutter_highlight_lines=0
   "let g:gitgutter_enabled = 0
 " gitgutter }}}
+
+" snipmate {{{
+  let g:UltisnipsExpandTrigger="<c-tab>"
+  let g:UltisnipsSnippetsDir="~/.vim/bundles_available/snippets/UltiSnips"
+
+" snipmate }}}
 
 " window stuff {{{
   map <C-h> <C-w>h
@@ -210,5 +217,21 @@
   " sudo {{{
   cmap w!! w !sudo tee % >/dev/null 
   " sudo }}}
+
+  " functinos {{{
+    " Remove trailing whitespace
+    " http://vim.wikia.com/wiki/Remove_unwanted_spaces
+    function! StripTrailingWhitespace()
+      if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\s\+$//e
+        normal 'yz<cr>
+        normal `z
+        retab
+      endif
+    endfunction
+
+  " functions }}}
  
 " Extensions }}}

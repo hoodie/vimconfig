@@ -55,3 +55,21 @@
 [submodule "bundles_available/rust"]
 	path = bundles_available/rust
 	url = https://github.com/rust-lang/rust.vim
+[submodule "bundles_available/ultisnips"]
+	path = bundles_available/ultisnips
+	url = https://github.com/sirver/ultisnips
+[submodule "bundles_available/coffee"]
+	path = bundles_available/coffee
+	url = https://github.com/kchmck/vim-coffee-script/
+[submodule "bundles_available/snipmate"]
+	path = bundles_available/snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule "bundles_available/snippets"]
+	path = bundles_available/snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "bundles_available/mw-utils"]
+	path = bundles_available/mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "bundles_available/tlib_vim"]
+	path = bundles_available/tlib_vim
+	url = https://github.com/tomtom/tlib_vim

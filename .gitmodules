@@ -73,3 +73,6 @@
 [submodule "bundles_available/tlib_vim"]
 	path = bundles_available/tlib_vim
 	url = https://github.com/tomtom/tlib_vim
+[submodule "bundles_available/racer"]
+	path = bundles_available/racer
+	url = https://github.com/phildawes/racer

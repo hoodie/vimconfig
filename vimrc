@@ -152,6 +152,11 @@
 " FILETYPES }}}
 
 " Extensions {{{
+" rust {{{
+ set hidden
+ let g:racer_cmd = "/usr/bin/racer"
+ let $RUST_SRC_PATH="/home/hendrik/code/hub/rust/src/"
+" rust }}}
 
 " navigation {{{
   inoremap jj <ESC>

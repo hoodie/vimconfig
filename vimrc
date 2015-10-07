@@ -59,7 +59,7 @@
       " 'c'	Use console dialogs instead of popup dialogs for simple choices.
       " 'm'	Menu bar is present.
       " 't'	Include tearoff menu items.  Currently only works for Win32, GTK+, and Motif 1.2 GUI.
-      set guioptions=Tacerb " ace, mace, Tace, Tacet
+      set guioptions=Tace " ace, mace, Tace, Tacet
       set mousehide " hide pointer during typing
       " GUI SETTINGS }}}
 
@@ -68,14 +68,18 @@
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
       set guifont=Fira\ Mono\ 9
-      "set guifont=Source\ Code\ Pro\ 9
+      set guifont=Hack\ 10
+      "set guifont=Source\ Code\ Pro\ 11
       "set guifont=Meslo\ LG\ M\ DZ\ 9
+      "set guifont="Hack"\ 10
       "colorscheme wombat
-      colorscheme lucius
+      "colorscheme lucius
+      colorscheme maui
 
 
     else " you have an xterm, only 256 colors
-      colorscheme wombat256
+      "colorscheme wombat256
+      colorscheme maui
       set t_Co=256
       set mouse=a
 
@@ -141,13 +145,20 @@
   au Filetype python setl shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   au Filetype yaml   setl foldmethod=indent foldenable
   au Filetype vim    setl foldmethod=marker foldenable shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
-  au Filetype rust   setl foldmethod=marker foldmarker={,} nofoldenable
+  "au Filetype rust   setl foldmethod=marker foldmarker={,} nofoldenable foldtext=GetCustomFoldText()
+  au Filetype rust   setl foldmethod=syntax foldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   "au BufRead,BufNewFile *.js,*.java   set shiftwidth=2 tabstop=4 smarttab expandtab softtabstop=4
-  au BufRead,BufNewFile *.coffee      set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2 listchars=tab:>.,trail:.,extends:#,nbsp:.
+  au BufRead,BufNewFile *.coffee      setl shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2 listchars=tab:>.,trail:.,extends:#,nbsp:.
   au BufNewFile,BufReadPost *.coffee  setl foldmethod=indent foldenable
+
+  function GetCustomFoldText()
+    let foldClose = '}'
+    let foldTtl = v:foldend - v:foldstart
+    return getline(v:foldstart) . ' (+) ' . foldTtl .  ' lines... ' . foldClose
+  endfunction
 
 " FILETYPES }}}
 

@@ -153,7 +153,7 @@
 " Extensions {{{
 " rust {{{
  set hidden
- let g:racer_cmd = "/usr/bin/racer"
+ let g:racer_cmd = "racer"
  let $RUST_SRC_PATH="/home/".$USER."/code/rust/packages/rust/src/"
 " rust }}}
 

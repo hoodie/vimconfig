@@ -63,8 +63,7 @@
       "DARK Colors:    Monokai, jellybeans, lucius, molokai_original, mustang, eddie
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
-      set guifont=Fira\ Mono\ 9
-      set guifont=Hack\ 9
+      set guifont=Hack\ 8
       colorscheme maui
 
 
@@ -101,10 +100,10 @@
   nmap <S-F8> :make -j3<CR>
 	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
 	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
-	au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TagbarToggle<CR>
+	au Filetype cpp,ruby,python,rust,java nnoremap <silent><buffer> <F10> :TagbarToggle<CR>
   au Filetype cpp,c nmap <S-F8> :make -j3<CR>
 
-  map <F10> :NERDTreeToggle<CR>
+  map <F9> :NERDTreeToggle<CR>
   map <F11> :set fullscreen!<CR>
   noremap <silent><Leader>/ :nohls<CR>
 
@@ -123,9 +122,31 @@
   filetype indent plugin on
 " cpp {{{
   au Filetype cpp setl foldmethod=marker foldmarker={,} nofoldenable
-  au Filetype cpp map <F4> :call Switch_h_cpp()<CR>
+  au Filetype cpp map <F4> :FSHere <CR>
   au Filetype cpp map <F8> :make -j4 <CR>
 " cpp }}}
+
+" rust {{{
+  au Filetype rust   setl foldmethod=indent foldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
+   let g:tagbar_type_rust = {
+       \ 'ctagstype' : 'rust',
+       \ 'kinds' : [
+           \'T:types,type definitions',
+           \'g:enum,enumeration names',
+           \'s:structure names',
+           \'c:consts,static constants',
+           \'t:traits,traits',
+           \'i:impls,trait implementations:1',
+           \'m:modules,module names',
+           \'f:functions,function definitions',
+       \],
+       \'sro': '.',
+       \ 'kind2scope' : {
+       \},
+       \ 'scope2kind' : {
+       \ }
+       \}
+" rust }}}
 
   au Filetype ruby   setl foldmethod=indent foldenable
   au Filetype python setl foldmethod=indent foldenable
@@ -133,7 +154,6 @@
   au Filetype yaml   setl foldmethod=indent foldenable
   au Filetype vim    setl foldmethod=marker foldenable shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au Filetype rust   setl foldmethod=marker foldmarker={,} nofoldenable foldtext=GetCustomFoldText()
-  au Filetype rust   setl foldmethod=indent foldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
   au Filetype pandoc setl nofoldenable
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
@@ -153,8 +173,8 @@
 " Extensions {{{
 " rust {{{
  set hidden
- let g:racer_cmd = "racer"
- let $RUST_SRC_PATH="/home/".$USER."/code/rust/packages/rust/src/"
+ "let g:racer_cmd = "racer"
+ "let $RUST_SRC_PATH="/home/".$USER."/code/rust/packages/rust/src/"
 " rust }}}
 
 " navigation {{{

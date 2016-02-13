@@ -85,3 +85,15 @@
 [submodule "bundles_available/better-whitespace"]
 	path = bundles_available/better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "bundles_available/syntax_cpp_enhanced"]
+	path = bundles_available/syntax_cpp_enhanced
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "bundles_available/fswitch"]
+	path = bundles_available/fswitch
+	url = https://github.com/derekwyatt/vim-fswitch/
+[submodule "bundles_available/swift"]
+	path = bundles_available/swift
+	url = https://github.com/toyamarinyon/vim-swift
+[submodule "bundles_available/YouCompleteMe"]
+	path = bundles_available/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe

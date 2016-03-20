@@ -259,3 +259,8 @@
   " functions }}}
 
 " Extensions }}}
+
+" VERY IMPORTANT {{{
+  :tabnew
+  :normal iHendrik, du schuldest uns noch eine Runde Freigetränke! -- Herzlichst, deine von dir tutorierten Softwarepraktikumsgruppen
+" VERY IMPORTANT }}}

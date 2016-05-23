@@ -55,7 +55,8 @@
       " 'c'	Use console dialogs instead of popup dialogs for simple choices.
       " 'm'	Menu bar is present.
       " 't'	Include tearoff menu items.  Currently only works for Win32, GTK+, and Motif 1.2 GUI.
-      set guioptions=Tace " ace, mace, Tace, Tacet
+      " 'h'	Limit horizontal scrollbar size to the length of the cursor line.  Reduces computations. |gui-horiz-scroll|
+      set guioptions=chat " ace, mace, Tace, Tacet
       set mousehide " hide pointer during typing
       " GUI SETTINGS }}}
 
@@ -63,8 +64,10 @@
       "DARK Colors:    Monokai, jellybeans, lucius, molokai_original, mustang, eddie
       "Known Fonts:    Monospace, FreeMono, DejaVu\ Sans\ Mono, Droid\ Sans\ Mono
 
-      set guifont=Hack\ 8
+      "set guifont=Hack\ 8 " see vimrc.local
       colorscheme maui
+      "colorscheme Tomorrow-Night
+
 
 
       set t_Co=256
@@ -93,19 +96,42 @@
 " SHORTCUTS {{{
   let mapleader=','
 
+  autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
   nnoremap <F5> :GundoToggle<CR>
 
   "nmap <F8> :TagbarToggle<CR>
   nmap <F8> :cwindow<CR>
+  noremap cn :cnext <CR>
+  noremap cp :cprevious <CR>
   nmap <S-F8> :make -j3<CR>
-	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
-	"au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
-	au Filetype cpp,ruby,python,rust,java nnoremap <silent><buffer> <F10> :TagbarToggle<CR>
+  "au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
+  "au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
+  au Filetype cpp,ruby,python,rust,java,javascript nnoremap <silent><buffer> <F10> :TagbarToggle<CR>
+  "au Filetype rust TagbarToggle
+
+  au Filetype pandoc nnoremap <silent><buffer> <F10> :TOC<CR>
+  au Filetype pandoc setl foldcolumn=0 number nofoldenable
+  let g:pandoc#toc#close_after_navigating=0
+  "let g:pandoc#toc#position = "left"
+
   au Filetype cpp,c nmap <S-F8> :make -j3<CR>
+
+  " Tabswitching
+  nnoremap <Tab> <C-W>w
+  nnoremap <S-Tab> <C-W>W
+  nnoremap <C-Tab> gt
+  nnoremap <C-S-Tab> gT
+  nnoremap <C-T> :tabe .<CR>
+  nnoremap <C-S> :vs .<CR>
+  nnoremap <C-P> :tabe $MYVIMRC<CR>
 
   map <F9> :NERDTreeToggle<CR>
   map <F11> :set fullscreen!<CR>
   noremap <silent><Leader>/ :nohls<CR>
+
+  " open some url/path
+  set isfname+=32
+  noremap ,o :execute ":!xdg-open " . shellescape( '<cfile>' )<CR>
 
 " Tabularize {{{
   if exists(":Tabularize")
@@ -121,13 +147,13 @@
 " FILETYPES {{{
   filetype indent plugin on
 " cpp {{{
-  au Filetype cpp setl foldmethod=marker foldmarker={,} nofoldenable
+  au Filetype cpp setl shiftwidth=4 tabstop=4 smarttab foldmethod=marker foldmarker={,} nofoldenable
   au Filetype cpp map <F4> :FSHere <CR>
   au Filetype cpp map <F8> :make -j4 <CR>
 " cpp }}}
 
 " rust {{{
-  au Filetype rust   setl foldmethod=indent foldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
+  au Filetype rust   setl foldmethod=indent nofoldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
    let g:tagbar_type_rust = {
        \ 'ctagstype' : 'rust',
        \ 'kinds' : [
@@ -148,13 +174,15 @@
        \}
 " rust }}}
 
-  au Filetype ruby   setl foldmethod=indent foldenable
-  au Filetype python setl foldmethod=indent foldenable
+  au Filetype ruby   setl foldmethod=indent nofoldenable
+  au Filetype python setl foldmethod=indent nofoldenable
   au Filetype python setl shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
   au Filetype yaml   setl foldmethod=indent foldenable
   au Filetype vim    setl foldmethod=marker foldenable shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au Filetype rust   setl foldmethod=marker foldmarker={,} nofoldenable foldtext=GetCustomFoldText()
   au Filetype pandoc setl nofoldenable
+
+  au Filetype javascript setl shiftwidth=4 tabstop=4 smarttab foldmethod=marker foldmarker={,} nofoldenable
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -171,23 +199,28 @@
 " FILETYPES }}}
 
 " Extensions {{{
+" nerdtree {{{
+ let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.lock$']
+" nerdtree }}}
+
 " rust {{{
  set hidden
- "let g:racer_cmd = "racer"
- "let $RUST_SRC_PATH="/home/".$USER."/code/rust/packages/rust/src/"
+ let g:racer_cmd = "racer"
+ let $RUST_SRC_PATH="/usr/src/rust/src/"
 " rust }}}
 
 " navigation {{{
   inoremap jj <ESC>
   inoremap kk <ESC>
   set wildmenu
+  set wildmode=longest,list:longest
   nnoremap k gk
   nnoremap j gj
   " navigation }}}
 
 " easier search {{{
-  nnoremap / /\v
-  vnoremap / /\v "normale rexen
+  "nnoremap / /\v
+  "vnoremap / /\v "normale rexen
   set hlsearch
   set ignorecase
   set smartcase
@@ -219,6 +252,10 @@
   "map <C-S-k> <C-w>- "
   "map <C-S-l> <C-w>> "
   let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 0
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = '|'
+
   "" }}}
 
   " Spell checking   {{{
@@ -259,3 +296,9 @@
   " functions }}}
 
 " Extensions }}}
+
+" Load Machine Local Settings{{{
+
+runtime! vimrc.local
+
+" }}}

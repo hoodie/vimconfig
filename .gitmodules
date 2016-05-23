@@ -97,3 +97,9 @@
 [submodule "bundles_available/YouCompleteMe"]
 	path = bundles_available/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundles_available/flake8"]
+	path = bundles_available/flake8
+	url = https://github.com/nvie/vim-flake8
+[submodule "bundles_available/airline-themes"]
+	path = bundles_available/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

@@ -103,3 +103,6 @@
 [submodule "bundles_available/airline-themes"]
 	path = bundles_available/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "bundles_available/one_colorscheme"]
+	path = bundles_available/one_colorscheme
+	url = https://github.com/rakr/vim-one

@@ -56,6 +56,7 @@
       " 'm'	Menu bar is present.
       " 't'	Include tearoff menu items.  Currently only works for Win32, GTK+, and Motif 1.2 GUI.
       " 'h'	Limit horizontal scrollbar size to the length of the cursor line.  Reduces computations. |gui-horiz-scroll|
+      " 'r'	Right Scrollbar
       set guioptions=chat " ace, mace, Tace, Tacet
       set mousehide " hide pointer during typing
       " GUI SETTINGS }}}
@@ -95,18 +96,20 @@
 
 " SHORTCUTS {{{
   let mapleader=','
+  let g:python_highlight_all = 1
 
   autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
   nnoremap <F5> :GundoToggle<CR>
 
   "nmap <F8> :TagbarToggle<CR>
   nmap <F8> :cwindow<CR>
-  noremap cn :cnext <CR>
-  noremap cp :cprevious <CR>
+  noremap cn :cnext<CR>
+  noremap cp :cprevious<CR>
   nmap <S-F8> :make -j3<CR>
   "au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <F9> :TlistToggle<CR>
   "au Filetype cpp,ruby,python,java nnoremap <silent><buffer> <S-F9> :TlistUpdate<CR>
   au Filetype cpp,ruby,python,rust,java,javascript nnoremap <silent><buffer> <F10> :TagbarToggle<CR>
+  "autocmd BufWritePost *.py call Flake8()
   "au Filetype rust TagbarToggle
 
   au Filetype pandoc nnoremap <silent><buffer> <F10> :TOC<CR>
@@ -116,14 +119,20 @@
 
   au Filetype cpp,c nmap <S-F8> :make -j3<CR>
 
-  " Tabswitching
+  " Quickfix Switching
+  nnoremap [q :cprev<CR>
+  nnoremap ]q :cnext<CR>
+  nnoremap [Q :cfirst<CR>
+  nnoremap ]Q :clast<CR>
+
+  " Tab Switching
   nnoremap <Tab> <C-W>w
   nnoremap <S-Tab> <C-W>W
   nnoremap <C-Tab> gt
   nnoremap <C-S-Tab> gT
   nnoremap <C-T> :tabe .<CR>
   nnoremap <C-S> :vs .<CR>
-  nnoremap <C-P> :tabe $MYVIMRC<CR>
+  nnoremap <C-P> :tabe ~/.vim/vimrc.local<CR>
 
   map <F9> :NERDTreeToggle<CR>
   map <F11> :set fullscreen!<CR>
@@ -147,13 +156,15 @@
 " FILETYPES {{{
   filetype indent plugin on
 " cpp {{{
-  au Filetype cpp setl shiftwidth=4 tabstop=4 smarttab foldmethod=marker foldmarker={,} nofoldenable
+  au Filetype cpp setl shiftwidth=4 tabstop=4 foldmethod=marker expandtab smarttab foldmarker={,} nofoldenable
   au Filetype cpp map <F4> :FSHere <CR>
+  au Filetype cpp map <F7> :copen <CR>
   au Filetype cpp map <F8> :make -j4 <CR>
 " cpp }}}
 
 " rust {{{
-  au Filetype rust   setl foldmethod=indent nofoldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 smarttab expandtab softtabstop=2
+  let g:rustfmt_autosave = 1
+  au Filetype rust setl foldmethod=indent nofoldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 softtabstop=2
    let g:tagbar_type_rust = {
        \ 'ctagstype' : 'rust',
        \ 'kinds' : [
@@ -252,9 +263,9 @@
   "map <C-S-k> <C-w>- "
   "map <C-S-l> <C-w>> "
   let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
+  "let g:airline#extensions#tabline#enabled = 0
+  "let g:airline#extensions#tabline#left_sep = ' '
+  "let g:airline#extensions#tabline#left_alt_sep = '|'
 
   "" }}}
 

@@ -163,7 +163,7 @@
 " cpp }}}
 
 " rust {{{
-  let g:rustfmt_autosave = 1
+  "let g:rustfmt_autosave = 1
   au Filetype rust setl foldmethod=indent nofoldenable foldtext=GetCustomFoldText() shiftwidth=4 tabstop=5 softtabstop=2
    let g:tagbar_type_rust = {
        \ 'ctagstype' : 'rust',
@@ -214,10 +214,22 @@
  let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.lock$']
 " nerdtree }}}
 
+" ack.vim {{{
+  if executable('rg')
+    let g:ackprg = 'rg --vimgrep'
+  endif
+  cnoreabbrev Ack ripgrep
+  nnoremap <Leader>a :Ack!<Space>
+" ack.vim }}}
+
 " rust {{{
+
  set hidden
+ au Filetype rust map <F8> :Neomake! cargo <CR>
+ au Filetype rust map <F7> :copen <CR>
  let g:racer_cmd = "racer"
  let $RUST_SRC_PATH="/usr/src/rust/src/"
+ let g:racer_experimental_completer = 1
 " rust }}}
 
 " navigation {{{

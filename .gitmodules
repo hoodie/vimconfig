@@ -106,3 +106,15 @@
 [submodule "bundles_available/one_colorscheme"]
 	path = bundles_available/one_colorscheme
 	url = https://github.com/rakr/vim-one
+[submodule "bundles_available/elixir"]
+	path = bundles_available/elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "bundles_available/ctrlp"]
+	path = bundles_available/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "bundles_available/ack.vim"]
+	path = bundles_available/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "bundles_available/neomake"]
+	path = bundles_available/neomake
+	url = https://github.com/neomake/neomake

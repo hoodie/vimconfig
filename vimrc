@@ -156,7 +156,7 @@
 " FILETYPES {{{
   filetype indent plugin on
 " cpp {{{
-  au Filetype cpp setl shiftwidth=4 tabstop=4 foldmethod=marker expandtab smarttab foldmarker={,} nofoldenable
+  au Filetype cpp setl shiftwidth=4 tabstop=4 foldmethod=indent expandtab smarttab foldmarker={,} nofoldenable
   au Filetype cpp map <F4> :FSHere <CR>
   au Filetype cpp map <F7> :copen <CR>
   au Filetype cpp map <F8> :make -j4 <CR>
@@ -193,7 +193,7 @@
   "au Filetype rust   setl foldmethod=marker foldmarker={,} nofoldenable foldtext=GetCustomFoldText()
   au Filetype pandoc setl nofoldenable
 
-  au Filetype javascript setl shiftwidth=4 tabstop=4 smarttab foldmethod=marker foldmarker={,} nofoldenable
+  au Filetype javascript setl shiftwidth=4 tabstop=4 smarttab foldmethod=indent foldmarker={,} nofoldenable
 
   "au BufRead,BufNewFile .vimrc,vimrc  set shiftwidth=2 tabstop=2 smarttab expandtab softtabstop=2
   "au BufRead,BufNewFile *.css         set shiftwidth=4 tabstop=4 smarttab expandtab softtabstop=4 listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -302,7 +302,8 @@
   cmap w!! w !sudo tee % >/dev/null
   " sudo }}}
 
-  " functinos {{{
+  " whitespace {{{
+    let b:better_whitespace_enabled = 0
     " Remove trailing whitespace
     " http://vim.wikia.com/wiki/Remove_unwanted_spaces
     function! StripTrailingWhitespace()
@@ -316,7 +317,8 @@
       endif
     endfunction
 
-  " functions }}}
+  
+  " whitespace }}}
 
 " Extensions }}}
 

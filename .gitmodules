@@ -118,3 +118,6 @@
 [submodule "bundles_available/neomake"]
 	path = bundles_available/neomake
 	url = https://github.com/neomake/neomake
+[submodule "bundles_available/typescript"]
+	path = bundles_available/typescript
+	url = https://github.com/leafgarland/typescript-vim
